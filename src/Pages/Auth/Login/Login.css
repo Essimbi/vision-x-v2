@@ -1,0 +1,135 @@
+/* Corps principal */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f8fa;
+    height: 100%;
+  }
+  
+  /* Page de connexion */
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+  
+  /* Logo */
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Carte centrale */
+  .login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titres */
+  .login-card h2 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: black !important;
+  }
+  
+  .login-card h4 {
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  /* Formulaire */
+  .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  /* Options: Remember me & Forgot password */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .options label {
+    font-size: 14px;
+  }
+  
+  .options a {
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Bouton Sign up */
+  .btn-primary {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Bouton Google */
+  .btn-google {
+    width: 100%;
+    background-color: white;
+    color: #333;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-google:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Lien inscription */
+  .signup-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
