@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Pages/Auth/Login/index';
+import RecoveryPassword from './Pages/Auth/RecoveryPassword/RecoveryPassword';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './Components/Main';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -13,6 +14,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/forget-password" element={<RecoveryPassword />} />
           <Route path='/dashboard/*' element={<Main />} />
         </Routes>
       </div>
