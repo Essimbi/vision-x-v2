@@ -53,6 +53,7 @@ const Home = () => {
     AOS.init({
       duration: 1500, 
       once: true, 
+      disable: 'mobile' // Désactive les animations sur mobile pour de meilleures performances
     });
   }, []);
 
@@ -120,25 +121,25 @@ const Home = () => {
   };
 
   return (
-    <div className="p-6 h-full overflow-auto">
+    <div className="p-3 md:p-6 h-full overflow-auto">
       {/* Stats Overview */}
-      <div className="grid grid-cols-4 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6">
         {/* Documents Traités */}
         <div
-          className="bg-white rounded-lg shadow p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
+          className="bg-white rounded-lg shadow p-4 md:p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
           data-aos="fade-up"
         >
           <div>
-            <h6 className="text-sm text-gray-500 mb-1">Documents traités</h6>
+            <h6 className="text-xs md:text-sm text-gray-500 mb-1">Documents traités</h6>
             <div className="flex items-baseline">
-              <span className="text-2xl font-semibold">1,248</span>
+              <span className="text-xl md:text-2xl font-semibold">1,248</span>
               <span className="ml-2 text-xs text-green-500">+12% ce jour</span>
             </div>
           </div>
-          <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-indigo-100 rounded-full flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-indigo-600"
+              className="h-4 w-4 md:h-5 md:w-5 text-indigo-600"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -153,21 +154,21 @@ const Home = () => {
 
         {/* Montant Total */}
         <div
-          className="bg-white rounded-lg shadow p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
+          className="bg-white rounded-lg shadow p-4 md:p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
           data-aos="fade-up"
           data-aos-delay="200"
         >
           <div>
-            <h6 className="text-sm text-gray-500 mb-1">Montant total</h6>
+            <h6 className="text-xs md:text-sm text-gray-500 mb-1">Montant total</h6>
             <div className="flex items-baseline">
-              <span className="text-2xl font-semibold">12,450,000 FCFA</span>
-              <span className="ml-2 text-xs text-red-500">-5% ce jour</span>
+              <span className="text-xl md:text-2xl font-semibold">12,450,000</span>
+              <span className="ml-2 text-xs text-red-500">-5%</span>
             </div>
           </div>
-          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-green-100 rounded-full flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-green-600"
+              className="h-4 w-4 md:h-5 md:w-5 text-green-600"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -183,21 +184,21 @@ const Home = () => {
 
         {/* Taux de Reconnaissance */}
         <div
-          className="bg-white rounded-lg shadow p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
+          className="bg-white rounded-lg shadow p-4 md:p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           <div>
-            <h6 className="text-sm text-gray-500 mb-1">Taux de reconnaissance</h6>
+            <h6 className="text-xs md:text-sm text-gray-500 mb-1">Taux de reconnaissance</h6>
             <div className="flex items-baseline">
-              <span className="text-2xl font-semibold">98.7%</span>
-              <span className="ml-2 text-xs text-green-500">+1.2% ce jour</span>
+              <span className="text-xl md:text-2xl font-semibold">98.7%</span>
+              <span className="ml-2 text-xs text-green-500">+1.2%</span>
             </div>
           </div>
-          <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-purple-100 rounded-full flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-purple-600"
+              className="h-4 w-4 md:h-5 md:w-5 text-purple-600"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -208,21 +209,21 @@ const Home = () => {
 
         {/* Documents en Attente */}
         <div
-          className="bg-white rounded-lg shadow p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
+          className="bg-white rounded-lg shadow p-4 md:p-6 flex justify-between items-center transition-transform transform hover:scale-105 hover:shadow-lg"
           data-aos="fade-up"
           data-aos-delay="600"
         >
           <div>
-            <h6 className="text-sm text-gray-500 mb-1">Documents en attente</h6>
+            <h6 className="text-xs md:text-sm text-gray-500 mb-1">Documents en attente</h6>
             <div className="flex items-baseline">
-              <span className="text-2xl font-semibold">24</span>
-              <span className="ml-2 text-xs text-red-500">+5 ce jour</span>
+              <span className="text-xl md:text-2xl font-semibold">24</span>
+              <span className="ml-2 text-xs text-red-500">+5</span>
             </div>
           </div>
-          <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-yellow-100 rounded-full flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-yellow-600"
+              className="h-4 w-4 md:h-5 md:w-5 text-yellow-600"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -237,15 +238,15 @@ const Home = () => {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         {/* Documents traités par jour */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h4 className="text-gray-700 font-medium">Documents traités par jour</h4>
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <h4 className="text-gray-700 font-medium mb-2 sm:mb-0">Documents traités par jour</h4>
             <select 
               value={timeRangeCharts}
               onChange={(e) => setTimeRangeCharts(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-1 text-sm"
+              className="border border-gray-300 rounded px-2 py-1 text-sm w-full sm:w-auto"
             >
               <option value="7 derniers jours">7 derniers jours</option>
               <option value="30 derniers jours">30 derniers jours</option>
@@ -253,19 +254,19 @@ const Home = () => {
               <option value="Cette année">Cette année</option>
             </select>
           </div>
-          <div className="h-64 flex items-center justify-center text-gray-400">
+          <div className="h-48 md:h-64 flex items-center justify-center text-gray-400">
             Graphique des documents traités
           </div>
         </div>
 
         {/* Répartition par type de document */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h4 className="text-gray-700 font-medium">Répartition par type de document</h4>
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <h4 className="text-gray-700 font-medium mb-2 sm:mb-0">Répartition par type de document</h4>
             <select 
               value={timeRangeDistribution}
               onChange={(e) => setTimeRangeDistribution(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-1 text-sm"
+              className="border border-gray-300 rounded px-2 py-1 text-sm w-full sm:w-auto"
             >
               <option value="Ce mois">Ce mois</option>
               <option value="Cette année">Cette année</option>
@@ -273,53 +274,61 @@ const Home = () => {
               <option value="Tous">Tous</option>
             </select>
           </div>
-          <div className="h-64 flex items-center justify-center text-gray-400">
+          <div className="h-48 md:h-64 flex items-center justify-center text-gray-400">
             Graphique de répartition
           </div>
         </div>
       </div>
 
       {/* Recent Documents and Activity */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Documents */}
         <div className="bg-white rounded-lg shadow">
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             <h4 className="text-gray-700 font-medium mb-4">Documents récents</h4>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3">Type</th>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3">Numéro</th>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3">Client/Fournisseur</th>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3">Montant</th>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3">Statut</th>
+                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-3 md:px-6 py-3">Type</th>
+                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-3 md:px-6 py-3">Numéro</th>
+                  <th className="hidden md:table-cell text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-3 md:px-6 py-3">Client</th>
+                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-3 md:px-6 py-3">Montant</th>
+                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-3 md:px-6 py-3">Statut</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {recentDocuments.map((doc, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-3 whitespace-nowrap">
+                    <td className="px-3 md:px-6 py-3 whitespace-nowrap">
                       <div className="flex items-center">
                         {getDocumentIcon(doc.type)}
-                        <span className="text-sm text-gray-900">{doc.type}</span>
+                        <span className="text-sm text-gray-900 hidden sm:inline">{doc.type}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-3 whitespace-nowrap text-sm text-gray-900">{doc.numero}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-sm text-gray-900">{doc.client}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-sm text-gray-900">{doc.montant}</td>
-                    <td className="px-6 py-3 whitespace-nowrap">{getStatusIcon(doc.statut)}</td>
+                    <td className="px-3 md:px-6 py-3 whitespace-nowrap text-xs md:text-sm text-gray-900">{doc.numero}</td>
+                    <td className="hidden md:table-cell px-3 md:px-6 py-3 whitespace-nowrap text-xs md:text-sm text-gray-900">{doc.client}</td>
+                    <td className="px-3 md:px-6 py-3 whitespace-nowrap text-xs md:text-sm text-gray-900">
+                      {doc.montant.replace(' FCFA', '')}
+                      <span className="text-xs hidden sm:inline"> FCFA</span>
+                    </td>
+                    <td className="px-3 md:px-6 py-3 whitespace-nowrap">{getStatusIcon(doc.statut)}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <div className="py-2 px-4 flex justify-center md:justify-end">
+            <button className="text-indigo-600 text-sm hover:text-indigo-800">
+              Voir tous les documents
+            </button>
+          </div>
         </div>
 
         {/* Recent Activity */}
         <div className="bg-white rounded-lg shadow">
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             <h4 className="text-gray-700 font-medium mb-4">Activité récente</h4>
             <div className="space-y-4">
               {recentActivity.map((activity, index) => (
@@ -331,12 +340,17 @@ const Home = () => {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-900">{activity.user}</p>
-                    <p className="text-sm text-gray-500">{activity.action}</p>
+                    <p className="text-xs md:text-sm text-gray-500">{activity.action}</p>
                     <p className="text-xs text-gray-400">{activity.time}</p>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+          <div className="py-2 px-4 flex justify-center md:justify-end">
+            <button className="text-indigo-600 text-sm hover:text-indigo-800">
+              Voir toutes les activités
+            </button>
           </div>
         </div>
       </div>
