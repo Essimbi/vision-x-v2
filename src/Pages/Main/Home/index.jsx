@@ -286,7 +286,7 @@ const Home = () => {
                 dataKey="value"
                 nameKey="type"
                 cx="50%"
-                cy="50%"
+                cy="55%"
                 outerRadius={60}
                 labelLine={false}
                 label={({ type, percent }) => `${type} (${(percent * 100).toFixed(0)}%)`}
@@ -295,7 +295,7 @@ const Home = () => {
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Legend verticalAlign="bottom" height={36} />
+              <Legend verticalAlign="bottom" height={8} />
               <Tooltip />
             </PieChart>
           </ResponsiveContainer>

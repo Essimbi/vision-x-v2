@@ -5,16 +5,14 @@ import FileUploadAnalyzer from '../FileUploadAnalyzer';
 import OhadaComponent from '../OhadaComponent/OhadaComponent';
 import PlanComptableInterne from '../PlanComptableInterne/PlanComptableInterne';
 import BankReconciliation from '../BankReconciliation/BankReconciliation';
+import FactureModule from '../../Pages/Main/Facture/Facture';
+import BonCommandeModule from '../../Pages/Main/BonCmd/BonCmd';
+import BonLivraisonModule from '../../Pages/Main/BonLivraison/BonLivraison';
+import RecuModule from '../../Pages/Main/Recu/RecuModule';
 
 // Placeholder components for other routes
-const Factures = () => <div>Page Factures</div>;
-const BonsDeCommande = () => <div>Page Bons de commande</div>;
-const BonsLivraison = () => <div>Page Bons de livraison</div>;
-const Recus = () => <div>Page Reçus</div>;
-const PiecesIdentite = () => <div>Page Pièces d'identité</div>;
 const PlanComptableOHADA = () => <OhadaComponent />;
 const PlanComptableInterneFonc = () => <PlanComptableInterne />;
-// const RapprochementBancaire = () => <div>Page Rapprochement bancaire</div>;
 const Rapports = () => <div>Page Rapports</div>;
 const Parametres = () => <div>Page Paramètres</div>;
 
@@ -23,10 +21,10 @@ function ContentRouter() {
     <div className="content-container flex-1 bg-gray-50 overflow-auto">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/documents/factures" element={<FileUploadAnalyzer />} />
-        <Route path="/documents/bons-de-commande" element={<FileUploadAnalyzer />} />
-        <Route path="/documents/bons-de-livraison" element={<FileUploadAnalyzer />} />
-        <Route path="/documents/recus" element={<FileUploadAnalyzer />} />
+        <Route path="/documents/factures" element={<FactureModule />} />
+        <Route path="/documents/bons-de-commande" element={<BonCommandeModule />} />
+        <Route path="/documents/bons-de-livraison" element={<BonLivraisonModule />} />
+        <Route path="/documents/recus" element={<RecuModule />} />
         <Route path="/documents/pieces-identite" element={<FileUploadAnalyzer />} />
         <Route path="/comptabilite/plan-comptable-ohada" element={<PlanComptableOHADA />} />
         <Route path="/comptabilite/plan-comptable-interne" element={<PlanComptableInterneFonc />} />
