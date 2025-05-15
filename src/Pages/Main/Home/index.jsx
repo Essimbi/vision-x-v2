@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend
+} from 'recharts';
 
 const Home = () => {
   const [timeRangeCharts, setTimeRangeCharts] = useState('7 derniers jours');
   const [timeRangeDistribution, setTimeRangeDistribution] = useState('Ce mois');
+
+  const COLORS = ['#6366F1', '#22C55E', '#F97316', '#EF4444'];
+
+  const documentTraitesParJour = [
+    { date: 'Lun', nombre: 150 },
+    { date: 'Mar', nombre: 200 },
+    { date: 'Mer', nombre: 180 },
+    { date: 'Jeu', nombre: 220 },
+    { date: 'Ven', nombre: 170 },
+    { date: 'Sam', nombre: 100 },
+    { date: 'Dim', nombre: 128 },
+  ];
+
+  const repartitionParType = [
+    { type: 'Facture', value: 45 },
+    { type: 'Bon de commande', value: 25 },
+    { type: 'Bon de livraison', value: 20 },
+    { type: 'Reçu', value: 10 },
+  ];
+
+
 
   // Sample data for recent documents
   const recentDocuments = [
@@ -240,43 +264,41 @@ const Home = () => {
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         {/* Documents traités par jour */}
-        <div className="bg-white rounded-lg shadow p-4 md:p-6">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-            <h4 className="text-gray-700 font-medium mb-2 sm:mb-0">Documents traités par jour</h4>
-            <select 
-              value={timeRangeCharts}
-              onChange={(e) => setTimeRangeCharts(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-1 text-sm w-full sm:w-auto"
-            >
-              <option value="7 derniers jours">7 derniers jours</option>
-              <option value="30 derniers jours">30 derniers jours</option>
-              <option value="Ce mois">Ce mois</option>
-              <option value="Cette année">Cette année</option>
-            </select>
-          </div>
-          <div className="h-48 md:h-64 flex items-center justify-center text-gray-400">
-            Graphique des documents traités
-          </div>
+        <div className="bg-white rounded-lg shadow p-4 md:p-6 transition-transform transform hover:scale-105 hover:shadow-lg" data-aos="fade-up">
+          <h6 className="text-xs md:text-sm text-gray-500 mb-3">Documents traités (7 derniers jours)</h6>
+          <ResponsiveContainer width="100%" height={150}>
+            <LineChart data={documentTraitesParJour}>
+              <XAxis dataKey="date" fontSize={10} />
+              <YAxis fontSize={10} />
+              <Tooltip />
+              <Line type="monotone" dataKey="nombre" stroke="#6366F1" strokeWidth={2} dot={{ r: 3 }} />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
 
         {/* Répartition par type de document */}
-        <div className="bg-white rounded-lg shadow p-4 md:p-6">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-            <h4 className="text-gray-700 font-medium mb-2 sm:mb-0">Répartition par type de document</h4>
-            <select 
-              value={timeRangeDistribution}
-              onChange={(e) => setTimeRangeDistribution(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-1 text-sm w-full sm:w-auto"
-            >
-              <option value="Ce mois">Ce mois</option>
-              <option value="Cette année">Cette année</option>
-              <option value="Trimestre en cours">Trimestre en cours</option>
-              <option value="Tous">Tous</option>
-            </select>
-          </div>
-          <div className="h-48 md:h-64 flex items-center justify-center text-gray-400">
-            Graphique de répartition
-          </div>
+        <div className="bg-white rounded-lg shadow p-4 md:p-6 transition-transform transform hover:scale-105 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <h6 className="text-xs md:text-sm text-gray-500 mb-3">Répartition par type de document</h6>
+          <ResponsiveContainer width="100%" height={200}>
+            <PieChart>
+              <Pie
+                data={repartitionParType}
+                dataKey="value"
+                nameKey="type"
+                cx="50%"
+                cy="50%"
+                outerRadius={60}
+                labelLine={false}
+                label={({ type, percent }) => `${type} (${(percent * 100).toFixed(0)}%)`}
+              >
+                {repartitionParType.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Legend verticalAlign="bottom" height={36} />
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
